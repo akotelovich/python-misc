@@ -15,7 +15,7 @@ print("Please paste device data in the following format:\nhostname,ip-address,ve
 reader = csv.reader(sys.stdin)
 for row in reader:
   #print(row)
-  t = env.get_template('add-device.jinja')
+  t = env.get_template('tufin-add-device.jinja')
   o = t.render(name = row[0], ip = row[1], vendor = row[2], model = row[3], username = row[4], password = row[5])
   
   url = 'https://'+$ip+'/securetrack/api/devices/bulk.json'
